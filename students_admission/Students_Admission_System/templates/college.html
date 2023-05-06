@@ -1,0 +1,69 @@
+{% extends 'basic.html' %}
+
+{% block title %} Admission System {% endblock %}
+{% block home %} active {% endblock %}
+
+{% block css %}
+{% endblock %}
+{% block body %}
+{% if request.user.is_authenticated %}
+
+{% else %}
+<div class="container mt-3">
+  <div class="alert alert-success" role="alert">
+   <center> <h5>WELCOME TO KAMPALA INTERNATIONAL UNIVERSITY, UGANDA</h5></center>
+  </div>
+  <h4>GET AHEAD IN YOUR CAREER WITH UGANDA'S TOP PRIVATE UNIVERSITY</h4>
+  <p>Apply for January, April, and August Intakes throughout the year. Apply now for our career-oriented programs!</p>
+  <center> <a href="{% url 'application_form'%}"><button type="submit" class="btn btn-primary">Apply now</button> </a></center>
+</div>
+{% endif %}
+<div class="container mt-4">
+    <h2>About KIU</h2>
+    <h4>THE VICE CHANCELLOR WELCOMES YOU</h4>
+    <p>I take this opportunity to welcome you to visit the Kampala International University website to learn more about the University, apply for admission, seek employment or engage with the KIU community. 
+      Established in 2001, KIU has made her presence in Uganda and the East African region very impactful, with a wide range of Academic Programs, two Campuses in Uganda and one in Tanzania (now an autonomous University known as Kampala International University in Tanzania-KIUT).  KIU Colleges, Faculties, Schools and Institutes attract both Ugandan and International students and Staff. </p>
+    <p>KIU is a fast growing institution attributing its growth to the vision and zeal of Board of Trustees, the University Council, and a steadfast Management team under my Leadership, to ensure that the University reaches new heights of higher education delivery not only in Uganda but, also in the entire African Region as a University of repute.</p>
+    
+    <p>With a vibrant Management team, a dedicated  staff and studious students, KIU has over the past 18 years superseded the imagination of many, and by January 2019, being ranked the best and premier Private University and  the 5th best University overall in Uganda. The investment in infrastructure, financial, material and human resources is undoubtedly parallel to none.</p>
+    <p>Many of the KIU’s Alumni have also been a significant contribution in promoting and elevating the University’s status in various scopes of life, relating to life after university. There have also been several support initiatives jointly undertaken by KIU and Government of Uganda in partnership with other regional Governments, creating and sustaining public confidence in the University.</p>
+
+    <p>In the most recent five years, a lot of institutional transformation has taken place in many aspects of University education delivery, Research and Management. We have deployed different technologies in teaching, management of student records, enhancement of examination and assessment management and institutional collaborations and Partnerships. </p>
+      
+    <p>We are known for our vibrancy, remaining dynamic in whatever we do, embracing technology and ensuring satisfaction of all the University stakeholders. The KIU study and work environment offers a unique and different positive embodiment. The University offers a wide range of extra-curricular activities and opens opportunities for talent management. Our students compete at national, regional and International levels, and have exhibited great success over the years. </p>
+      
+    <p>Please feel free to interact with us at KIU, enjoy your tour of the website and welcome to physically visit the University.</p>
+    <div class="row mt-4">
+  <div class="container mt-4">
+    <h4>BRIEF HISTORY OF KIU</h4>
+    <p>Kampala International University (KIU) is a private, not-for-profit institution based in Uganda. It was established in 2001 and assumed chattered status in 2009.
+      In pursuit of the dream to raise the next generation of problem solvers for the East African region and indeed the whole of Africa, the University operates a multi-campus system which consists of two campuses in Uganda (The Main campus in Kampala and the Western Campus in Ishaka-Bushenyi); one other university in Dar Es Salaam, Tanzania, while a third one is being developed in Nairobi Kenya. The University which started as a typical degree-awarding institution has now grown into the number one Private University in Uganda and is currently ranked number 5 in the country according to the 2019 Webometric Ranking, out of 50 universities. It is a member of the Association of Commonwealth Universities, the Association of Africa Universities as well as the Inter University-Council of East Africa. The University offers a variety of programmes in Health Sciences, Science and Technology, Engineering, Business and Management, Law, Humanities and Education.</p>
+  <!-- <div class="row mt-4">
+    <div class="container mt-4">
+    <div class="container mt-4">
+    <h4>KIU Vision</h4>
+    <p>To become a premier institution of international repute that prepares students for the world of work and for an inclusive society.</p>
+  <div class="row mt-4">
+    <div class="container mt-4">
+    <div class="container mt-4">
+    <h4>KIU mission</h4>
+    <p>To respond to societal needs by designing and delivering an education guided by the principles and values of respect for society, economy and environment.</p>
+  <div class="row mt-4">
+    <div class="container mt-4">
+    <div class="container mt-4">
+    <h4>KIU Philosophy</h4>
+    <p>KIU regards each student as a unique individual.  It’s our role to assist students to actualize their strengths. We ensure that the educational experience of students culminate into productive graduates who can contribute positively to the overall wellbeing of society. Holistic development and a strong, positive intellectual development is what KIU strives to inculcate in each student.</p>
+  -->
+    {% for i in notice %}
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{i.title}}</h5>
+          <p class="card-text"><a href="/notice/{{i.id}}/">View all recent updates.</a></p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  </div>
+{% endblock %}
