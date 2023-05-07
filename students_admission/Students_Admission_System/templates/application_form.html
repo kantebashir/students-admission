@@ -40,7 +40,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-6">
-                            <label>Email ID :</label>
+                            <label>Email Address :</label>
                         </div>
                         <div class="col-md-6">
                             <p>{{user.email}}</p>
@@ -64,6 +64,15 @@
                             <p>{{user.application.address}}</p>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Nationality :</label>
+                        </div>
+                        <div class="col-md-6">
+                            <p>{{user.application.nationality}}</p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -71,11 +80,11 @@
 <hr>
 <div class="container mt-4">
     <div class="row">
-        <h1 style="text-align: center;">Educational Details</h1>
+        <h1 style="text-align: center;">Educational Background</h1>
             <hr>
         <div class="col-md-4">
             <div class="profile-img">
-                <h3>10th Std Details</h3>
+                <h3>High school</h3>
             </div>
         </div>
         <div class="col-md-8">
@@ -84,38 +93,21 @@
                     <br><br>
                     <div class="row">
                         <div class="col-md-6">
-                            <label>SSC Percentage :</label>
+                            <label>A Level  :</label>
                         </div>
                         <div class="col-md-6">
-                            <p>{{user.application.ssc_percentage}}%</p>
+                            <p>{{user.application.a_level_result}}</p>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
-                            <label>SSC Marksheet :</label>
+                            <label>O Level :</label>
                         </div>
                         <div class="col-md-6">
-                            <p><a href="{{user.application.ssc_marksheet.url}}">View SSC Marksheet</a></p>
+                            <p>{{user.application.o_level_result}}</p>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label>SSC Passing Certificate :</label>
-                        </div>
-                        <div class="col-md-6">
-                            <p><a href="{{user.application.ssc_passing_certificate.url}}"> View SSC Passing Certificate</a></p>
-                        </div>
-                    </div>
-                    {% if user.application.phone_no %}
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label>SSC Leaving Certificate :</label>
-                        </div>
-                        <div class="col-md-6">
-                            <p><a href="{{user.application.ssc_leaving_certificate.url}}">View SSC Leaving Certificate</a></p>
-                        </div>
-                    </div>
-                    {% endif %}
+                    
                 </div>
             </div>
         </div>
@@ -126,47 +118,24 @@
     <div class="row">
         <div class="col-md-4">
             <div class="profile-img">
-                <h3>12th Std Details</h3>
+                <h3>Primary school</h3>
             </div>
         </div>
         <div class="col-md-8">
             <div class="profile-tab">
                 <div class="tab-pane">
                     <br><br>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label>HSC Percentage :</label>
-                        </div>
-                        <div class="col-md-6">
-                            <p>{{user.application.hsc_percentage}}%</p>
-                        </div>
+                    
                     </div>
                     <div class="row">
                         <div class="col-md-6">
-                            <label>HSC Marksheet :</label>
+                            <label>PLE result slip :</label>
                         </div>
                         <div class="col-md-6">
-                            <p><a href="{{user.application.hsc_marksheet.url}}">View HSC Marksheet</a></p>
+                            <p>{{user.application.ple_result}}</p>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label>HSC Passing Certificate :</label>
-                        </div>
-                        <div class="col-md-6">
-                            <p><a href="{{user.application.hsc_passing_certificate.url}}">View HSC Marksheet</a></p>
-                        </div>
-                    </div>
-                    {% if user.application.phone_no %}
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label>HSC Leaving Certificate :</label>
-                        </div>
-                        <div class="col-md-6">
-                            <p><a href="{{user.application.hsc_leaving_certificate.url}}">View HSC Leaving Certificate</a></p>
-                        </div>
-                    </div>
-                    {% endif %}
+                
                 </div>
             </div>
         </div>
@@ -177,7 +146,7 @@
     <div class="row">
         <div class="col-md-4">
             <div class="profile-img">
-                <h3>CET and JEE Scorecard</h3>
+                <h3>Kindergaten</h3>
             </div>
         </div>
         <div class="col-md-8">
@@ -186,38 +155,13 @@
                     <br><br>
                     <div class="row">
                         <div class="col-md-6">
-                            <label>CET Percentile :</label>
+                            <label>Nursery :</label>
                         </div>
                         <div class="col-md-6">
-                            <p>{{user.application.cet_percentile}}</p>
+                            <p>{{user.application.kindergaten}}</p>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label>CET Scorecard :</label>
-                        </div>
-                        <div class="col-md-6">
-                            <p><a href="{{user.application.cet_scorecard.url}}">View CET Scorecard</a></p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label>JEE Percentile :</label>
-                        </div>
-                        <div class="col-md-6">
-                            <p>{{user.application.jee_percentile}}</p>
-                        </div>
-                    </div>
-                    {% if user.application.phone_no %}
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label>JEE Scorecard :</label>
-                        </div>
-                        <div class="col-md-6">
-                            <p><a href="{{user.application.jee_scorecard.url}}">View JEE Scorecard</a></p>
-                        </div>
-                    </div>
-                    {% endif %}
+                    
                 </div>
             </div>
         </div>
@@ -229,7 +173,7 @@
 <div class="container mt-4">
     <form method="POST" enctype="multipart/form-data"> {% csrf_token %}
     {{form.as_p}}
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <center><button type="submit" class="btn btn-primary">Submit</button></center>
     </form>
 </div>
 {% endif %}
