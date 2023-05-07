@@ -1,0 +1,58 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block title %} Admission {% endblock %}
+{% block admission %} active {% endblock %}
+
+{% block css %}
+{% endblock %}
+{% block body %}
+
+<div class="wrapper">
+    <!-- Main content -->
+    <section class="invoice">
+      <!-- title row -->
+      <div class="row">
+        <div class="col-12">
+          <h2 class="page-header">
+           <p> <img src="{% static 'images/logo.jpeg' %}"> <b>Kampala International University </b></p><br>
+            
+            <center><u>Directorate of Admission</u></center>
+          </h2><br>
+        </div>
+        <!-- /.col -->
+      </div>
+
+
+    <small class="float-right"><h4>Full Name: {{user.application.name}}</h4></small><br>
+    <small class="float-right"><h4>Nationality: {{user.application.nationality}}</h4></small><br>
+    <small class="float-right"><h4>Domitory: {{user.application.dom}}</h4></small><br>
+    <small class="float-right"><h4>Course: {{user.application.course}}</h4></small><br>
+    <small class="float-right"><h4>Instructor: {{user.application.teacher}}</h4></small><br>
+    <small class="float-right"><h4>Date: {% now "jS F Y " %}</h4></small><br>
+
+      <p>dear {{user.application.name}} ,</p>
+
+        <div class="row">
+        <div class="col-12 table-responsive">
+          <h3 class="page-header">
+           <u> Re: Admission</u>
+           
+         </h3>
+         
+         <p>Following your application am pleased to inform you that your application has been {{user.application.Application_Status}} and been awarded {{user.application.course}} for the academic year 2023/2024 subject to submission and verification of supportive documents</p>
+         <p>the term starts on 07-aug-2023 and you should ensure that you register with the university admissions office within three weeks from the start semester</p>
+         <p>ur advised to fulfil admission requirements and registration including the copy of the admission letter</p>
+            
+        </div>
+        <!-- /.col -->
+      </div>
+      
+      
+      <script>
+        window.addEventListener("load", window.print());
+      </script>
+
+
+
+
+{% endblock %}

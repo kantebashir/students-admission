@@ -19,6 +19,9 @@ def notice(request, myid):
     details = Detail.objects.filter(title=notices)
     return render(request, "notice.html", {'details':details})
 
+def admission_letter(request):
+    return render(request, "admission.html")
+
 def application_form(request):
     if not request.user.is_authenticated:
         return redirect("/login")
