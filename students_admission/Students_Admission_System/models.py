@@ -32,7 +32,6 @@ class Application(models.Model):
     ple_result = models.FileField()
     kindergaten = models.FileField(null=True)
     national_id = models.ImageField(upload_to="images", null=True)
-    teacher = models.CharField(max_length=100)
     DOM =(
         ('Boys hostel A','Boys hostel A'),
         ('Boys hostel B','Boys hostel B'),
