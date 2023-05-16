@@ -6,6 +6,9 @@ from django.contrib.auth.decorators import login_required
 from .forms import ApplicationForm
 from .models import Application, Notice, Detail
 from django.views.generic import UpdateView
+import datetime
+
+from .admission_selector import generate_admission_number, get_appications
 
 
 
@@ -26,6 +29,15 @@ def application_form(request):
     if not request.user.is_authenticated:
         return redirect("/login")
     hide = Application.objects.filter(user=request.user)
+
+    application_id = generate_admission_number()
+    yea = datetime.datetime.today().year
+    adm_no = f"GB/JS/{yea}/{application_id}"
+
+    form = ApplicationForm(initial={"application_id": adm_no})
+    get_appss = get_appications()
+    
+
     if request.method=="POST":
         form = ApplicationForm(request.POST, request.FILES)
         if form.is_valid():
@@ -35,7 +47,7 @@ def application_form(request):
             return render(request, "application_form.html")
     else:
         form=ApplicationForm()
-    return render(request, "application_form.html", { 'form':form,'hide':hide})
+    return render(request, "application_form.html", { 'form':form,'hide':hide, 'get_appss':get_appss})
 
 def edit_application(request):
     if not request.user.is_authenticated:
